@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\uploadtodo;
+use App\Http\Controllers\getdatafromtodo;
+
+
 
 Route::get('/', function () {
     // return view('welcome');
@@ -13,6 +16,8 @@ Route::post('/todo', function(){
 });
 
 Route::post('/upload', [uploadtodo::class, 'submit'])->name('todo.submit');
+
+Route::get('/getdata',[getdatafromtodo::class, 'getdata'])->name('todo.getdata');
 
 
 

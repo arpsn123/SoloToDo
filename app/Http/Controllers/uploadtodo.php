@@ -20,6 +20,6 @@ class uploadtodo extends Controller
         $todo_details->details = $request->input('details');
         $todo_details->save();
 
-        return view('done');
+        return redirect('/getdata');
     }
 }
