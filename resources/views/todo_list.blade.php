@@ -6,29 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {
+        .container, form{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: blue;
+            gap: 10px;
         }
+
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>
-            This is the first blade webpage i am building;
-        </h1>
         <form action="/todo" method="POST">
             @csrf
+            Title : 
+            <input type="text" name="title" placeholder="title of todo" required>
+            Details : 
+            <input type="text" name="details" placeholder="details of the todo" required>
             <button type="submit">
-                Go To Todo List
+                Upload
             </button>
         </form>
     </div>
-
 
 </body>
 
