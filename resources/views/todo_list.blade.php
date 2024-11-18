@@ -20,7 +20,7 @@
 
 <body>
     <div class="container">
-        <form action="/todo" method="POST">
+        <form action="/upload" method="POST">
             @csrf
             Title : 
             <input type="text" name="title" placeholder="title of todo" required>
