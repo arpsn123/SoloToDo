@@ -119,8 +119,6 @@
                     </p>
 
 
-
-                    <!-- Simple Delete Button -->
                     <form action="{{ route('todo.delete', $i->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
@@ -128,13 +126,13 @@
                     </form>
 
 
-
-
-
-
-
-
-
+                    @if(!$i->isdone)
+                        <form action="{{ route('todo.update', $i->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit">Mark As Done</button>
+                        </form>
+                    @endif
 
                 </div>
             @endforeach
@@ -142,7 +140,7 @@
             <p class="empty-message">No todo items found!</p>
         @endif
 
-        <!-- Button to Add Todo -->
+
         <form action="/todo" method="post" style="text-align: center; margin-top: 20px;">
             @csrf
             <button type="submit">Add Todo</button>
@@ -152,12 +150,3 @@
 </body>
 
 </html>
-
-
-
-
-
-<!-- <form action="/delete" method="post">
-                        $delete_id = "{{ $i->id }}"
-                        <button type="submit">Delete</button>
-                    </form> -->
