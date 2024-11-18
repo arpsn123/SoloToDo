@@ -8,6 +8,11 @@
 <body>
     <div class="container">
         <h1>Successfully Added Tddo</h1>
+        <form action="/todo" method="post">
+            <button type="submit">
+                Add Todo
+            </button>
+        </form>
     </div>
 </body>
 </html>

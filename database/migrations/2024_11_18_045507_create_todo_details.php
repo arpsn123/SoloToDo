@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('todo_details', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('details');
-            $table->boolean('isdone');
+            $table->string('name')->nullable();
+            $table->string('details')->nullable();
+            $table->boolean('isdone')->default(false);
             $table->timestamps();
         });
     }

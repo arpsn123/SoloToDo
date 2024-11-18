@@ -23,7 +23,7 @@
         <form action="/upload" method="POST">
             @csrf
             Title : 
-            <input type="text" name="title" placeholder="title of todo" required>
+            <input type="text" name="name" placeholder="name of todo" required>
             Details : 
             <input type="text" name="details" placeholder="details of the todo" required>
             <button type="submit">
