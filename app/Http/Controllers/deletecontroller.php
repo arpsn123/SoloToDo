@@ -8,8 +8,8 @@ class deletecontroller extends Controller
 {
     public function destroy($id)
     {
-                todo_details::findOrFail($id)->delete();
-                return redirect('/getdata');
+        todo_details::findOrFail($id)->delete();
+        return redirect('/getdata');
     }
 }
 
