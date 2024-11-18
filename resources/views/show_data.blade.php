@@ -8,7 +8,10 @@
 
     <style>
         /* Reset some default styling */
-        body, h1, p, form {
+        body,
+        h1,
+        p,
+        form {
             margin: 0;
             padding: 0;
         }
@@ -95,7 +98,6 @@
             color: #888;
             margin-top: 20px;
         }
-
     </style>
 </head>
 
@@ -104,18 +106,36 @@
     <div class="container">
         <h1>Todo Details</h1>
 
-        <!-- Check if there are todo items and display them -->
         @if($todo_data->count() > 0)
             @foreach ($todo_data as $i)
                 <div class="todo-item">
                     <p><span>ID:</span> {{$i->id}}</p>
                     <p><span>Name:</span> {{$i->name}}</p>
                     <p><span>Details:</span> {{$i->details}}</p>
-                    <p><span>Status:</span> 
+                    <p><span>Status:</span>
                         <span class="status {{ $i->isdone ? 'completed' : 'pending' }}">
                             {{$i->isdone ? 'Completed' : 'Pending'}}
                         </span>
                     </p>
+
+
+
+                    <!-- Simple Delete Button -->
+                    <form action="{{ route('todo.delete', $i->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Delete</button>
+                    </form>
+
+
+
+
+
+
+
+
+
+
                 </div>
             @endforeach
         @else
@@ -132,3 +152,12 @@
 </body>
 
 </html>
+
+
+
+
+
+<!-- <form action="/delete" method="post">
+                        $delete_id = "{{ $i->id }}"
+                        <button type="submit">Delete</button>
+                    </form> -->
